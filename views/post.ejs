@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container" style="align-items: center;">
+    <h1><%= place.place_name %></h1>
+    <img class="post-photo" src="<%= place.image %>" alt="<%= place.place_name %>">
+    <p><%= place.full_description %></p>
+    <% if (place.comments && place.comments.length > 0) { %>
+        <h2>Comments</h2>
+        <div class="comments">
+            <ul>
+                <% place.comments.forEach((comment) => { %>
+                    <li>
+                        <p class="autor"><%= comment.autor %>:</p>
+                        <p><%= comment.comment %></p>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+    <% } %>
+        <div class="comments" style="align-self: center; gap: 30px">
+            <form action="/delete/<%= place.place_name %>" method="POST">
+                <input type="submit" value="Delete post">
+            </form>
+            <form action="/change_description/<%= place.place_name %>" method="PATCH">
+                <input type="submit" value="Change Description">
+            </form>
+            <form action="/add-comment/<%= place.place_name %>" method="GET">
+                <input type="submit" value="Add Comment">
+            </form>
+        </div>
+
+            
+        
+        
+</div>
+<%- include("partials/footer.ejs") %>

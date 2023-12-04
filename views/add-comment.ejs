@@ -1,0 +1,14 @@
+<%- include("partials/header.ejs") %>
+
+<div class="newplace">
+    <h1>Add Comment</h1>
+    <h2><%= place %></h2>
+    <form action="/add/<%= place %>" method="POST">
+      <input name="autor" type="text" class="feedback-input" placeholder="Your Name" />
+      <textarea name="comment" class="feedback-input" placeholder="Comment"></textarea>
+      <input type="submit" value="Add Comment" />
+    </form>
+    
+</div>
+
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,14 @@
+<%- include("partials/header.ejs") %>
+
+<div class="newplace">
+    <h1>Change Description</h1>
+    <h2><%= place %></h2>
+    <form action="/changed/<%= place %>" method="POST">
+      <textarea name="description" class="feedback-input" placeholder="Enter New Description"></textarea>
+      <textarea name="full_description" class="feedback-input" placeholder="Enter New Full Description"></textarea>
+      <input type="submit" value="Change Description" />
+    </form>
+    
+</div>
+
+<%- include("partials/footer.ejs") %>

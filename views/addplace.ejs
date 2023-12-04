@@ -1,0 +1,14 @@
+<%- include("partials/header.ejs") %>
+
+<div class="newplace">
+    <h1>Add New Place</h1>
+    <form action="/submit" method="POST">
+      <input name="image" type="url" class="feedback-input" placeholder="Image URL" />
+      <input name="place_name" type="text" class="feedback-input" placeholder="Place Name" />
+      <textarea name="description" class="feedback-input" placeholder="Description"></textarea>
+      <textarea name="full_description" class="feedback-input" placeholder="Full Description"></textarea>
+      <input type="submit" value="SUBMIT" />
+    </form>
+    
+</div>
+<%- include("partials/footer.ejs") %>
